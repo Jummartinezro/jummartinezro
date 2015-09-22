@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 8 ]>
+<html class="no-js ie ie7" lang="en" ng-app="resumeApp" ng-controller="resumeCtrl as ctrl"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="no-js ie ie8" lang="en" ng-app="resumeApp" ng-controller="resumeCtrl as ctrl"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en" ng-app="resumeApp" ng-controller="resumeCtrl as ctrl"> <!--<![endif]-->
 <head>
 
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Juan Martínez</title>
+   <title>{{ctrl.resumeData.name}}</title>
 	<meta name="description" content="Juan Martínez website">
-	<meta name="author" content="Juan Manuel Martínez Romero">
+   <meta name="author" content=ctrl.resumeData.name>
 
    <!-- Mobile Specific Metas
    ================================================== -->
@@ -56,7 +59,7 @@
 
       <div class="row banner">
          <div class="banner-text">
-            <h1 class="responsive-headline">I'm Juan Martinez.</h1>
+            <h1 class="responsive-headline">I'm {{ctrl.resumeData.name}}.</h1>
             <h3>I'm a Grenoble based <span>information systems engineer</span>,
                <span>front-end</span> and <span>back-end developer</span>
                 Currently interested in web, Java technologies and quality assurance.
@@ -108,7 +111,7 @@
 
                   <h2>Contact Details</h2>
                   <p class="address">
-                     <span>Juan Manuel Martínez Romero</span><br>
+                     <span>{{ctrl.resumeData.name}}</span><br>
                      <span>
                         Chez Julián Valdés<br>
                         14 Place Jean Moulin<br>
@@ -169,8 +172,10 @@
    <!-- Java Script
    ================================================== -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script type="text/javascript" src="js/resume.js"></script>
 
    <script src="js/jquery.flexslider.js"></script>
    <script src="js/waypoints.js"></script>
